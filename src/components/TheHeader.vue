@@ -31,7 +31,7 @@ export default {
     padding: 10px 0;
   }
   .logo img {
-    width: 90px;
-    
+    width: 100px;
+   
   }
 </style>
