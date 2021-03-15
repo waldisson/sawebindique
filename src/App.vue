@@ -100,4 +100,22 @@ input:hover, textarea:hover, textarea:hover, textarea:focus {
   border-color:#47a28f;
 }
 
+.v-enter,
+.v-leave-to {
+  opacity:0;
+}
+
+.v-enter {
+  transform: translate3d(0, -20px, 0)
+}
+.v-leave-to {
+  transform: translate3d(0, 20px, 0)
+}
+
+
+.v-enter-active,
+.v-leave-active {
+  transition: all 0.3s;
+}
+
 </style>
