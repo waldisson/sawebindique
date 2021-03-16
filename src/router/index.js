@@ -1,10 +1,10 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import Produto from "../views/Produto.vue";
+import Login from "../views/Login.vue";
 
 Vue.use(VueRouter);
-
- 
 
 const router = new VueRouter({
   mode: "history",
@@ -12,17 +12,25 @@ const router = new VueRouter({
   routes: [
     {
       path: "/",
-      name: "Home",
+      name: "home",
       component: Home,
+    },
+    {
+      path: "/produto/:id",
+      name: "produto",
+      component: Produto,
+      props: true,
+    },
+    {
+      path: "/login",
+      name: "login",
+      component: Login,
+      props: true,
     },
   ],
   scrollBehavior() {
-    return window.scrollTo({top:0, behavior:"smooth"})
-  }
-  
-  
+    return window.scrollTo({ top: 0, behavior: "smooth" });
+  },
 });
-
-
 
 export default router;
