@@ -4,6 +4,10 @@ import Home from "../views/Home.vue";
 import Produto from "../views/Produto.vue";
 import Login from "../views/Login.vue";
 import Usuario from "../views/usuario/Usuario.vue";
+import UsuarioProdutos from "../views/usuario/UsuarioProdutos.vue";
+import UsuarioEditar from "../views/usuario/UsuarioEditar.vue";
+import UsuarioVendas from "../views/usuario/UsuarioVendas.vue";
+import UsuarioCompras from "../views/usuario/UsuarioCompras.vue";
 
 Vue.use(VueRouter);
 
@@ -30,8 +34,29 @@ const router = new VueRouter({
     },
     {
       path: "/usuario",
-      name: "usuario",
       component: Usuario,
+      children: [
+        {
+          path: "",
+          name: "usuario",
+          component: UsuarioProdutos,
+        },
+        {
+          path: "compras",
+          name: "compras",
+          component: UsuarioCompras,
+        },
+        {
+          path: "editar",
+          name: "editar",
+          component: UsuarioEditar,
+        },
+        {
+          path: "vendas",
+          name: "vendas",
+          component: UsuarioVendas,
+        },
+      ],
     },
   ],
   scrollBehavior() {
