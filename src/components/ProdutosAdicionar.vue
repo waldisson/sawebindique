@@ -1,17 +1,22 @@
 <template>
   <form class="adicionar-produto">
     <label for="nome">Nome:</label>
-    <input type="text" name="nome" id="nome" v-model="produto.nome" />
-    <label for="nome">Preço: (R$)</label>
-    <input type="number" name="preco" id="preco" v-model="produto.preco" />
-    <label for="nome">Fotos</label>
-    <input type="file" name="fotos" id="fotos" ref="fotos" />
+    <input id="nome" type="text" name="nome" v-model="produto.nome" />
+
+    <label for="preco">Preço: (R$)</label>
+    <input id="preco" type="number" name="preco" v-model="produto.preco" />
+
+    <label for="fotos">Fotos</label>
+    <input id="fotos" type="file" name="fotos" ref="fotos" />
+
     <label for="nome">Descrição</label>
+
     <textarea
       name="descricao"
       id="descricao"
       v-model="produto.descricao"
     ></textarea>
+
     <input
       type="button"
       value="Adicionar Produto"
@@ -39,7 +44,7 @@ export default {
   },
   methods: {
     formatarProdutos() {
-      this.produto.usuario_id = this.$store.state.usuario_id;
+      this.produto.usuario_id = this.$store.state.usuario.id;
     },
     adicionarProduto() {
       this.formatarProdutos();
